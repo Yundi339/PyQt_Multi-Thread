@@ -1,12 +1,6 @@
-# PyQt Multi-Thread
+# PyQt Multi-Thread 多线程
 
-[![](https://img.shields.io/badge/Yudi339-PyQt__Multi--Thread-blue)](https://github.com/Yundi339/PyQt_Multi-Thread)
-
-[![](https://img.shields.io/github/languages/top/Yundi339/PyQt_Multi-Thread.svg)](https://github.com/Yundi339/PyQt_Multi-Thread)
-
-[![](https://img.shields.io/github/license/Yundi339/PyQt_Multi-Thread.svg)](https://github.com/Yundi339/PyQt_Multi-Thread)
-
-
+[![](https://img.shields.io/badge/Yudi339-PyQt__Multi--Thread-blue)](https://github.com/Yundi339/PyQt_Multi-Thread) [![](https://img.shields.io/github/languages/top/Yundi339/PyQt_Multi-Thread.svg)](https://github.com/Yundi339/PyQt_Multi-Thread) [![](https://img.shields.io/github/license/Yundi339/PyQt_Multi-Thread.svg)](https://github.com/Yundi339/PyQt_Multi-Thread)
 
 ## 简介
 
