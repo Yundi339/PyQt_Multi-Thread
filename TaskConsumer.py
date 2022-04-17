@@ -4,11 +4,14 @@ except ImportError:
     from PyQt5.QtCore import pyqtSignal, QRunnable, QMutex, QThread
 from queue import Queue
 
+
 class TaskConsumer(QRunnable):
     __send_signal = pyqtSignal(str)
-    def __init__(self, index:int, queen: Queue, signal:pyqtSignal):
+
+    def __init__(self, index: int, queen: Queue, signal1: pyqtSignal, signal2: pyqtSignal):
         super(TaskConsumer, self).__init__()
-        self.__send_signal = signal
+        self.__send_signal = signal1
+        self.__insert_sql_signal = signal2
         self.__queen = queen
         self.__count = 0
         self.__index = index
@@ -22,9 +25,10 @@ class TaskConsumer(QRunnable):
         mutex.unlock()
         self.__send_signal.emit(
             "<font color=\"#000000\">"
-                "Thread {} Consumer{}-{} Run."
+            "Thread {} Consumer{}-{} Run."
             "</font>"
-            .format(int(QThread.currentThreadId()),self.__index, count))
+                .format(int(QThread.currentThreadId()), self.__index, count))
+        self.__insert_sql_signal.emit(self.__index, 'Consumer', int(QThread.currentThreadId()), 'Run')
         QThread.msleep(self.__delay)
         mutex.lock()
         if self.__queen.empty():
@@ -33,7 +37,9 @@ class TaskConsumer(QRunnable):
                 "<font color=\"#FF0000\">"
                 "Thread {} Consumer{}-{} Empty."
                 "</font>"
-                .format(int(QThread.currentThreadId()),self.__index, count))
+                    .format(int(QThread.currentThreadId()), self.__index, count))
+            self.__insert_sql_signal.emit(self.__index, 'Consumer', int(QThread.currentThreadId()), 'Empty')
+
         else:
             num = self.__queen.get()
             mutex.unlock()
@@ -41,5 +47,5 @@ class TaskConsumer(QRunnable):
                 "<font color=\"#FF0000\">"
                 "Thread {} Consumer{}-{} Get {}."
                 "</font>"
-                .format(int(QThread.currentThreadId()),self.__index, count, num))
-
+                    .format(int(QThread.currentThreadId()), self.__index, count, num))
+            self.__insert_sql_signal.emit(self.__index, 'Consumer', int(QThread.currentThreadId()), 'Get {}'.format(num))
