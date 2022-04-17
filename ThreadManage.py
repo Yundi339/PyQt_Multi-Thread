@@ -96,7 +96,7 @@ class Manage(QObject):
         self.sql_thread.wait()
 
     def __del__(self):
-        self.quit()
         del self.queue
         del self.ProducerQueen
         del self.ConsumerQueen
+        print('manage close')

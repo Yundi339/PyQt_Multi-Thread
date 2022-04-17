@@ -51,5 +51,6 @@ class Sql(QObject):
     def quit(self):
         self.sql_connect.commit()
         self.sql_connect.close()
+        print('sql close')
 
 

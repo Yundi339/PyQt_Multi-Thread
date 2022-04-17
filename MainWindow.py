@@ -23,6 +23,7 @@ class MainWindow(UI_MainWindow):
         self.manage_object = Manage()
         self.manage_object.moveToThread(self.manage_thread)
         self.manage_thread.started.connect(self.manage_object.run)
+        self.manage_thread.finished.connect(self.manage_object.quit)
         self.manage_thread.finished.connect(self.manage_object.deleteLater)
 
         self.manage_object._send_signal.connect(self.manage_receive)
@@ -56,7 +57,6 @@ class MainWindow(UI_MainWindow):
         if reply == QMessageBox.StandardButton.Yes:
             try:
                 if self.manage_thread.isRunning():
-                    self.manage_object.quit()
                     self.manage_thread.quit()
                     self.manage_thread.wait()
                 if self.manage_thread.isFinished():
