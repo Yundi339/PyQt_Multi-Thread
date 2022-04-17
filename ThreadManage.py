@@ -8,6 +8,7 @@ from TaskProducer import TaskProducer
 from TaskConsumer import TaskConsumer
 
 
+
 class Manage(QObject):
     _send_signal = pyqtSignal(str)
     def __init__(self):
