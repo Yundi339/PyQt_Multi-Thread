@@ -1,5 +1,13 @@
 # PyQt Multi-Thread
 
+[![](https://img.shields.io/badge/Yudi339-PyQt__Multi--Thread-blue)](https://github.com/Yundi339/PyQt_Multi-Thread)
+
+[![](https://img.shields.io/github/languages/top/Yundi339/PyQt_Multi-Thread.svg)](https://github.com/Yundi339/PyQt_Multi-Thread)
+
+[![](https://img.shields.io/github/license/Yundi339/PyQt_Multi-Thread.svg)](https://github.com/Yundi339/PyQt_Multi-Thread)
+
+
+
 ## 简介
 
 最近重新学了`Qt`多线程，对多线程的逻辑有了新的认识，因此写了这样一个程序来证明我的认识是对的，这个程序的代码量不多，主要侧重点在设计方面，因为设计问题我代码改版了三次，花费近两周时间才完成并且修复了所有测试的bug。(PS:如果有人对这份代码感兴趣，并且运行后发现bug，可以告知我及时修正它)
