@@ -20,13 +20,13 @@
 
 ## 文件结构
 
-|── main.py - 程序入口
-|── UI.py - Ui界面
-|── MainWindow.py - 界面功能
-|── ThreadManage.py - 后台线程
-|── TaskConsumer.py - 消费者
-|── TaskProducer.py - 生产者
-└── untitled.ui - QtUi文件
+|── main.py - 程序入口</br>
+|── UI.py - Ui界面</br>
+|── MainWindow.py - 界面功能</br>
+|── ThreadManage.py - 后台线程</br>
+|── TaskConsumer.py - 消费者</br>
+|── TaskProducer.py - 生产者</br>
+└── untitled.ui - QtUi文件</br>
 
 ## 环境
 
